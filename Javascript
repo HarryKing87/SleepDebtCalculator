@@ -1,0 +1,74 @@
+//First function to determine the actual hours of sleep.
+function getSleepHours(day) {
+if (day === 'Monday' || day === 'monday') 
+{
+return 8;
+}
+else if (day === 'Tuesday' || day === 'tuesday')
+{
+  return 6.5;
+}
+else if (day === 'Wednesday' || day === 'wednesday')
+{
+  return 9;
+}
+else if (day === 'Thursday' || day === 'thursday')
+{
+  return 6;
+}
+else if (day === 'Friday' || day === 'friday')
+{
+  return 10;
+}
+else if (day === 'Saturday' || day === 'saturday')
+{
+  return 11;
+}
+else 
+{
+  return 10.5;
+}
+}
+
+function getActualSleepHours() {
+  getSleepHours('monday');
+    getSleepHours('tuesday');
+      getSleepHours('wednesday');
+        getSleepHours('thursday');
+          getSleepHours('friday');
+            getSleepHours('saturday');
+              getSleepHours('sunday');
+              var sum = getSleepHours('monday') + getSleepHours('tuesday') + getSleepHours('wednesday') + getSleepHours('thursday') + getSleepHours('friday') + getSleepHours('saturday') + getSleepHours('sunday');
+
+              return sum;
+}
+
+//Creating a function with the ideal sleep hours we prefer.
+function getIdealSleepHours() {
+  var idealHours = 9;
+  //Seven is the number of days in a week.
+  return idealHours * 7;
+}
+
+function calculateSleepDebt() {
+  var actualSleepHours = getActualSleepHours();
+  var idealSleepHours = getIdealSleepHours();
+
+  if (actualSleepHours === idealSleepHours)
+  {
+    console.log('You got the perfect amount of sleep this week!' + ' Hours slept: ' + getActualSleepHours());
+  }
+  else if (actualSleepHours > idealSleepHours)
+  {
+    console.log('You got more sleep than needed this week!' + ' Hours slept: ' + getActualSleepHours());
+  }
+  else if (actualSleepHours < idealSleepHours)
+  {
+    console.log('You have to get some rest!' + ' Hours slept: ' + getActualSleepHours());
+  }
+}
+
+
+calculateSleepDebt();
+
+
